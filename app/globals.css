@@ -108,4 +108,11 @@ a {
 
 .nav {
   font-size: large;
+  padding: 20px 0;
+  margin: 0;
+  border-bottom: 1px solid black;
+}
+
+.nav a {
+  text-decoration: none;
 }

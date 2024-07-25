@@ -28,6 +28,8 @@ export const InvestorsGrid = ({data} : {data: Array<Investors>}) => {
         className={styles.investorsGrid} 
         rows={rows} 
         columns={columns}
-        onRowClick={(params) => router.push(`/investor/${params.id}`)} 
+        onRowClick={(params) => {
+            router.push(`/investor/${params.id}?name=${params.row.firm_name}`)
+        }} 
     />
 }

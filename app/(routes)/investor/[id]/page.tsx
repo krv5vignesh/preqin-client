@@ -6,14 +6,17 @@ import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import { useEffect, useState } from "react";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
+import { useSearchParams } from 'next/navigation';
 
 const Investor = ({ params }: { params: { id: number } }) => {
+  console.log(params);
+    const searchParams = useSearchParams()
     const [assetClass, setAssetClass] = useState<string>();
     const [assets, setAssets] = useState<Array<string>>();
     const [commitment, setCommitment] = useState<Array<Commitment>>();
 
     const columns: GridColDef[] = [
-      { field: 'id', headerName: 'Commitment ID', width: 100 },
+      { field: 'id', headerName: 'ID', width: 100 },
       { field: 'asset_class', headerName: 'Asset Class', width: 150 },
       { field: 'firm_id', headerName: 'Firm ID', width: 150 },
       { field: 'currency', headerName: 'Currency', width: 150 },
@@ -51,7 +54,7 @@ const Investor = ({ params }: { params: { id: number } }) => {
 
     return <main className={styles.main}>
     <div className={styles.center}>
-      <div className={styles.title}> Investor {params.id}</div>
+      <div className={styles.title}>Investor: {searchParams.get("name")}</div>
       <div className={styles.assetsContainer}>
           {
             assets && assets.length > 0 && 
@@ -62,7 +65,6 @@ const Investor = ({ params }: { params: { id: number } }) => {
                     labelId="asset-class-label"
                     id="asset-class-select"
                     value={assetClass}
-                    label="Age"
                     onChange={(event: SelectChangeEvent) => setAssetClass(event.target.value)}
                 >
                     {
