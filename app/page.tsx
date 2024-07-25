@@ -1,5 +1,5 @@
 import { InvestorsGrid } from "./components/InvestorsGrid";
-import styles from "./page.module.css";
+import styles from "./page.module.scss";
 import React from "react";
 
 const getInvestors = async () => {
@@ -7,7 +7,7 @@ const getInvestors = async () => {
   const response = await fetch(url);
   let data;
   if(response.status === 200) {
-    data = response.json();
+    data = await response.json();
   }
   return data;
 }

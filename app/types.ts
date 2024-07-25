@@ -5,3 +5,11 @@ type Investors = {
     date_added: Date;
     address: string;
 }
+
+type Commitment = {
+    id: number;
+    asset_class: string;
+    firm_id: number;
+    currency: string,
+    amount: number;
+}

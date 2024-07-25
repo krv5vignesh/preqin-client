@@ -1,7 +1,7 @@
 "use client";
 
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
-import styles from "../page.module.css";
+import styles from "../page.module.scss";
 import { useRouter } from 'next/navigation';
 
 export const InvestorsGrid = ({data} : {data: Array<Investors>}) => {
