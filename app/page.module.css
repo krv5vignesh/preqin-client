@@ -75,6 +75,7 @@
 
 .center {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
@@ -210,7 +211,7 @@
   }
 }
 
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   .vercelLogo {
     filter: invert(1);
   }
@@ -218,7 +219,7 @@
   .logo {
     filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
   }
-} */
+}
 
 @keyframes rotate {
   from {
@@ -228,7 +229,8 @@
     transform: rotate(0deg);
   }
 }
-
-/* .investorsGrid {
-  color: white !important;
-} */
+  
+.title {
+  font-size: x-large;
+  margin-bottom: 50px;
+}
